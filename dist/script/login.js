@@ -1,0 +1,1 @@
+"use strict";!function(t){t("button").on("click",function(){t.ajax({type:"post",url:"http://localhost/xgimi/php/login.php",data:{username:t(".username").val(),password:t(".password").val()}}).done(function(a){a?(location.href="index.html",localStorage.setItem("username",t(".username").val())):(t(".password").val(""),alert("用户名或者密码错误"))})})}(jQuery);

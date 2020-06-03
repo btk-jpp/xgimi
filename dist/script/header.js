@@ -1,0 +1,1 @@
+"use strict";!function(o){var i=o(".nav-menu li:first a"),t=o(".nav-main");i.hover(function(){t.show(),o(this).css({"border-bottom":"1px solid #5e85f1",color:"#5e85f1"})},function(){t.hide(),o(this).css({"border-bottom":"0px",color:"#585858"})}),t.hover(function(){o(this).show()},function(){o(this).hide()})}(jQuery);
