@@ -5,6 +5,7 @@
     margin: 0 auto;
 }
 
+//顶部
 nav{
     background: #f7f9fa;
     height: 40px;
@@ -48,6 +49,7 @@ nav{
         }
     }
 }
+// 头部导航
 .nav-menu{
     width: 100%;
     background: #fff;
@@ -84,18 +86,14 @@ nav{
         margin-left: 30px;
         height: 80px;
         li {
-            line-height: 50px;
-            height: 50px;
-            margin-top: 15px;
+            line-height: 80px;
+            height: 80px;
             float: left;
             a {
                 display: inline-block;
                 padding: 0px 18px;
                 color: #585858;
                 font-size: 16px;
-                &:hover{
-                    color: #5e85f1;
-                }
             }
             .arrow_down {
                 width: 8px;
@@ -106,6 +104,83 @@ nav{
                 position: relative;
                 top: -3px;
             }
+        }
+    }
+}
+// 导航内容
+.nav-menu-main{
+    // display: none;
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    background: #E6E7EF;
+    z-index: 99999;
+    box-shadow: 0 0 3px #BBB;
+}
+.nav-main{
+    display: none;
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    background: #fff;
+    z-index: 99999;
+    box-shadow: 0 0 3px #BBB;
+    // 左边
+    .nav-left{
+        float: left;
+        i{
+            width: 6px;
+            height: 8px;
+            display: inline-block;
+            margin-left: 30px;
+            background: url(../img/arrow_right_header.png);
+            position: relative;
+            top: -1px;
+        }
+        li{
+            font-size: 16px;
+            margin: 30px 0;
+            cursor: pointer;
+            a{
+                color: #333;
+                &:hover{
+                    color: #428bca;
+                }
+            }
+            &:hover i{
+                background: url(../img/arrow_right_active.png);
+            }
+        }
+    }
+    // 右边
+    .nav-right{
+        float: left;
+        width: 868px;
+        padding-left: 60px;
+        .nav-box{
+            display: none;
+        }
+        li {
+            padding: 15px;
+            text-align: center;
+            float: left;
+        }
+        .nav-img{
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+        p{
+            width: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #333333;
+            font-size: 12px;
         }
     }
 }

@@ -168,6 +168,8 @@ main{
                     font-size: 20px;
                     margin-left: 10px;
                     position: absolute;
+                    cursor: pointer;
+                    user-select:none;
                 }
 
             }
