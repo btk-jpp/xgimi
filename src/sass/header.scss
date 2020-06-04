@@ -1,10 +1,8 @@
 @import '_reset.scss';
 .container {
-    position: relative;
     min-width: 1140px;
     margin: 0 auto;
 }
-
 //顶部
 nav{
     background: #f7f9fa;
@@ -46,6 +44,18 @@ nav{
                     color: #428bca;
                 }
             }
+        }
+        .user-hide{
+            float: left;
+            display: none;
+            a{
+                &:hover{
+                    color: #428bca;
+                }
+            }
+        }
+        ul{
+            float: left;
         }
     }
 }
@@ -89,6 +99,11 @@ nav{
             line-height: 80px;
             height: 80px;
             float: left;
+            &:hover{
+                a{
+                    color: #428bca;
+                }
+            }
             a {
                 display: inline-block;
                 padding: 0px 18px;
@@ -109,13 +124,34 @@ nav{
 }
 // 导航内容
 .nav-menu-main{
-    // display: none;
     position: absolute;
     top: 120px;
     width: 100%;
     background: #E6E7EF;
     z-index: 99999;
     box-shadow: 0 0 3px #BBB;
+    .nav-menu-list {
+        display: none;
+        padding-bottom: 12px;
+        width: 1140px;
+        height: 140px;
+        ul {
+            float: left;
+            position: relative;
+            padding-left: 155px;
+            li{
+                float: left;
+                img{
+                    width: 110px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                }
+                p{
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
 .nav-main{
     display: none;
@@ -141,15 +177,6 @@ nav{
             font-size: 16px;
             margin: 30px 0;
             cursor: pointer;
-            a{
-                color: #333;
-                &:hover{
-                    color: #428bca;
-                }
-            }
-            &:hover i{
-                background: url(../img/arrow_right_active.png);
-            }
         }
     }
     // 右边
@@ -159,11 +186,15 @@ nav{
         padding-left: 60px;
         .nav-box{
             display: none;
+
         }
         li {
             padding: 15px;
             text-align: center;
             float: left;
+           &:hover p{
+                color: #428bca;
+            } 
         }
         .nav-img{
             width: 120px;
@@ -174,6 +205,7 @@ nav{
                 width: 100%;
             }
         }
+
         p{
             width: 120px;
             overflow: hidden;
@@ -182,5 +214,65 @@ nav{
             color: #333333;
             font-size: 12px;
         }
+        i{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: url(../img/view_more.png);
+            vertical-align: middle;
+        }
+        .view_more:hover{
+            & i{
+                background: url(../img/view_more_active.png);
+            }
+        }
+    }
+}
+// 侧边栏
+.sidebarBtn {
+    width: 60px;
+    height: 210px;
+    position: fixed;
+    bottom: 5%;
+    right: 20px;
+    z-index: 40;
+    .sideTip-btn {
+        position: relative;
+        overflow: hidden;
+        width: 58px;
+        height: 59px;
+        background-image: url(../img/sidebarBtn.png);
+        background-position: -1px 133px;
+        cursor: pointer;
+        margin-bottom: 15px;
+        &:hover{
+            overflow: visible;
+            background-image: url(../img/sildebarBtn-active.png);
+        }
+        &:hover>.sideTip{
+            left: -100px;
+            opacity: 1;
+        }
+    }
+    .sidebar-cart{
+        background-position: -1px 59px;
+    }
+    .sidebar-top{
+        background-position:0px 0px;
+        display: none;
+    }
+    .sideTip {
+        width: 94px;
+        height: 32px;
+        background: url(../img/sildeInfo_bg.png) center no-repeat;
+        color: #fff;
+        text-align: center;
+        line-height: 32px;
+        position: absolute;
+        left: -150px;
+        top: 12px;
+        text-indent: -6px;
+        transition: all 0.2s linear;
+        opacity: 0;
     }
 }

@@ -17,5 +17,5 @@ if (isset($_POST['submit'])) {
     $password = sha1($_POST['password']);
     $repass = sha1($_POST['repass']);
     $conn->query("insert into `registry` values (null,'$username','$password',NOW())");
-    header('location:http://localhost/xgimi/src/login.html');
+    header('location:http://localhost/xgimi/dist/login.html');
 }

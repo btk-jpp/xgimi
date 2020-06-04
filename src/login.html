@@ -14,12 +14,16 @@
     <!-- 头部 -->
     <header>
         <div class="menu">
-            <div class="logo"><a href="javascript:;"><img src="img/logo.png"></a></div>
-            <div class="nav"><ul>
-                <li><a href="javascript:;">商城</a></li> 
-                <li><a href="javascript:;">论坛</a></li>
-                <li><a href="javascript:;">服务</a></li> 
-            </ul></div>
+            <div class="logo">
+                <a href="javascript:;"><img src="img/logo.png"></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="javascript:;">商城</a></li>
+                    <li><a href="javascript:;">论坛</a></li>
+                    <li><a href="javascript:;">服务</a></li>
+                </ul>
+            </div>
             <div><a href="javascript:;" target="_blank">关于极米</a></div>
         </div>
     </header>
@@ -27,24 +31,27 @@
     <main>
         <div class="content">
             <div class="content_head">
-                <div class="content_title">极米账户登录</div>  
+                <div class="content_title">极米账户登录</div>
             </div>
             <form action="http://localhost/xgimi/php/login.php" method="post">
-                <div><p><label for="">用户姓名：</label><input type="text" name="username" class="username" placeholder="用户名" class="username"></p><span></span></div>
-                <div><p><label for="">用户密码：</label><input type="password" name="password" placeholder="密码" class="password"></p><span></span></div>
+                <div>
+                    <p><label for="">用户姓名：</label><input type="text" name="username" class="username" placeholder="用户名" class="username"></p><span></span></div>
+                <div>
+                    <p><label for="">用户密码：</label><input type="password" name="password" placeholder="密码" class="password"></p><span></span></div>
                 <button>立即登录</button>
                 <div>
                     <a href="javascript:;">手机短信登录/注册</a>
-                    <a href="javascript:;" style="float: right;">注册账号/忘记密码</a>
+                    <a href="registry.html" style="float: right;">注册账号/忘记密码</a>
                 </div>
             </form>
         </div>
     </main>
     <!-- 页脚 -->
     <footer>
-            ©xgimi.com 蜀ICP备12003417号
+        ©xgimi.com 蜀ICP备12003417号
     </footer>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="script/sha1.js"></script>
     <script src="script/login.js"></script>
 </body>
 

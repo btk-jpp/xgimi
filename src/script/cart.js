@@ -1,4 +1,9 @@
 ! function($) {
+    // 引入头部尾部商品文件
+    $(document).ready(function () {
+        $("header").load( "header.html");
+        $("footer").load( "footer.html");
+    })
     //1.获取cookie渲染对应的商品列表
     //2.获取所有的接口数据，判断取值。
 

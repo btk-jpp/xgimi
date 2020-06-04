@@ -21,3 +21,18 @@ input{
 em{
     font-style:normal
 }
+body{
+    margin: 0 auto;
+    min-width: 1140px;
+    background: #f7f8f9;
+    color: #333;
+}
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}

@@ -10,7 +10,7 @@ const gulp = require('gulp'); //引入gulp，生成一个gulp对象
 const html = require('gulp-minify-html'); //引入html压缩插件  html函数方法
 const css = require('gulp-clean-css'); //引入css压缩插件  css函数方法
 const sass = require('gulp-sass'); //引入sass编译插件 
-const connect = require("gulp-connect");
+// const connect = require("gulp-connect");
 //sass
 const sourcemaps = require('gulp-sourcemaps'); //引入生成.map文件模块
 const plugins = require('gulp-load-plugins')(); //生成.map文件 返回的是一个函数体。需要再次执行。
@@ -27,13 +27,13 @@ const es2015 = require('babel-preset-es2015');
 const imagemin = require('gulp-imagemin'); //图片压缩
 const watch = require('gulp-watch'); //gulp监听
 
-gulp.task("server", done => {
-    connect.server({
-      root: "dist",
-      livereload: true
-    });
-    done();
-  });
+// gulp.task("server", done => {
+//     connect.server({
+//       root: "dist",
+//       livereload: true
+//     });
+//     done();
+//   });
 
 //2.复制文件
 gulp.task('copyfile', done => {
@@ -91,7 +91,7 @@ gulp.task('uglifyjs', done => {
 gulp.task('uglifyimg', done => {
      gulp.src('src/img/*.{jpg,png,gif}')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'))
+        .pipe(gulp.dest('dist/img'));
         done();
 });
 
@@ -110,6 +110,7 @@ gulp.task("watch", done => {
     gulp.watch("src/sass/*.scss", gulp.series("compilesass"));
     gulp.watch("src/script/*.js", gulp.series("uglifyjs"));
     gulp.watch("src/*.html", gulp.series("uglifyhtml"));
+    gulp.watch("src/img/*.{jpg,png,gif}", gulp.series("uglifyimg"));
     done();
   });
-gulp.task("default", gulp.parallel("server", "watch")); //建立默认任务，同时执行sever和watch两个任务
+gulp.task("default", gulp.parallel( "watch")); //建立默认任务，同时执行sever和watch两个任务

@@ -4,12 +4,15 @@
     let array = [];//排序中的数组
     let prev = null;
     let next = null;
-
-
+    //引入头部尾部文件
+    $(document).ready(function () {
+        $("header").load( "header.html");
+        $("footer").load( "footer.html");
+    })
     //1.渲染列表页的数据-默认渲染第一页
     const $list = $('.list');
     $.ajax({
-        url: 'http://localhost/project/php/listdata.php',
+        url: '',
         dataType: 'json'
     }).done(function (data) {
         let $strhtml = '<ul>';

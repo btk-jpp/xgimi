@@ -1,0 +1,98 @@
+.container {
+    min-width: 1140px;
+    margin: 0 auto;
+}
+.footer{
+    width: 100%;
+    height: 534px;
+    background: url(../img/footer_bg.jpg) center center no-repeat #000;
+    color: #ffffff;
+    .nav-footer{
+        padding: 88px 0;
+        overflow: hidden;
+        ul{
+            float: left;
+            width: 17%;
+            li{
+                text-align: left;
+                font-size: 13px;
+                margin-bottom: 20px;
+                margin: 0 0 10px;
+            }
+            a {
+                color: #919191;
+            }
+            .title{
+                font-size: 16px;
+            }
+        }
+        .vx{
+            width: 23%;
+            border-left: 1px solid #919191;
+            img{
+                width: 100px;
+            }
+            .vx-content{
+                text-align: center;
+                div{
+                    font-size: 12px;
+                    margin-top: 10px;
+                    color: #919191;
+                }
+            }
+        }
+    }
+    .nav-footer-bottom{
+        clear: both;
+        position: relative;
+        img {
+            vertical-align: middle;
+        }
+        p {
+            font-size: 12px;
+            line-height: 22px;
+            text-align: left;
+            color: #919191;
+            a{
+                font-size: 12px;
+                padding: 0 10px;
+                color: #919191;
+            }
+            &:nth-of-type(1){
+                a:not(:nth-of-type(1)) {
+                    border-left: 1px solid #999;
+                    font-size: 12px;
+                    padding: 0 10px;
+                    color: #919191;
+                }
+                a:last-child {
+                    float: right;
+                    border: none;
+                    padding: 0;
+                }
+                border-bottom: 1px solid #919191;
+                padding-bottom: 25px;
+                margin-bottom: 25px;
+            }
+            .gongshang {
+                background-image: url(../img/netpolice.jpg);
+                background-position: center;
+                background-size: auto 14px;
+                background-repeat: no-repeat;
+                width: 18px;
+                display: inline-block;
+                height: 20px;
+                margin-left: 8px;
+                border-left: snow;
+                line-height: 25px;
+                vertical-align: top;
+            }
+            .slogan {
+                float: right;
+            }
+            
+        }
+    }
+}
+
+
