@@ -1,6 +1,6 @@
 <?php
 include "conn.php";
-$sql = "select * from xgimigoods"; //获取所有的数据
+$sql = "select * from indexgoods"; //获取所有的数据
 $result = $conn->query($sql); //获取数据的结果集(记录集)
 $arr = array();
 for ($i = 0; $i < $result->num_rows; $i++) {

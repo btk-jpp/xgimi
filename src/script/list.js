@@ -12,18 +12,19 @@
     //1.渲染列表页的数据-默认渲染第一页
     const $list = $('.list');
     $.ajax({
-        url: '',
+        url: 'http://localhost/xgimi/php/listdata.php',
         dataType: 'json'
     }).done(function (data) {
         let $strhtml = '<ul>';
         $.each(data, function (index, value) {
             $strhtml += `
                 <li>
-                    <a href="detail.html?sid=${value.sid}" target="_blank">
-                        <img class="lazy" data-original="${value.url}" width="200" height="200"/>
-                        <p>${value.sid}${value.title}</p>
-                        <span class="price">￥${value.price}</span>
-                        <span>${value.sailnumber}</span>
+                    <a href="detail.html?sid=${value.sid}">
+                        <p>
+                            <img class="lazy" data-original="${value.url}" >
+                        </p>
+                        <p class="pname"> ${value.title} </p>
+                        <p><b> ${value.sailnumber}<font>元</font></b></p>
                     </a>
                 </li>
             `;

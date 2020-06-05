@@ -3,7 +3,7 @@ include "conn.php";
 
 $pagesize = 10; //单个页面展示的数据条数
 
-$sql = "select * from taobaogoods"; //获取所有的数据
+$sql = "select * from xgimigoods"; //获取所有的数据
 $result = $conn->query($sql); //获取数据的结果集(记录集)
 
 $num = $result->num_rows; //记录集的总条数  22
@@ -28,7 +28,7 @@ $page = ($pagevalue - 1) * $pagesize;
 //limit 10,10  从偏移量5开始 取10条
 //limit 20,10 从偏移量14开始 取10条
 
-$sql1 = "select * from taobaogoods limit $page,$pagesize";
+$sql1 = "select * from xgimigoods limit $page,$pagesize";
 $res = $conn->query($sql1);
 
 

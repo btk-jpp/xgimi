@@ -1,0 +1,1 @@
+"use strict";!function(o){o(document).ready(function(){o.ajax({url:"http://localhost/xgimi/php/indexdata.php",dataType:"json"}).done(function(t){o(".product-box-left img").attr("src",t[0].url);for(var n=0;n<t.length;n++)console.log(t[n].url);o.each(t,function(t,n){o("h2 span").html(n.mtitle)})})})}(jQuery);

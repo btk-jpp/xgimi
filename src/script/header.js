@@ -79,4 +79,9 @@
     },function(){
         $nav_menu_list.eq($(this).index()).stop().slideToggle().siblings('.nav-menu-list').hide()
     })
+    $nav_menu_list.hover(function(){
+        $(this).stop().slideToggle("normal")
+    },function(){
+        $(this).stop().slideToggle("normal")
+    })
 }(jQuery);
