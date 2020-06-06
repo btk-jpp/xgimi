@@ -150,6 +150,11 @@ nav{
                     text-align: center;
                 }
             }
+            .list-title{
+                text-align: center;
+                line-height: 140px;
+                font-size: 16px;
+            }
         }
     }
 }
@@ -186,7 +191,9 @@ nav{
         padding-left: 60px;
         .nav-box{
             display: none;
-
+            &:nth-of-type(1){
+                display: block;
+            }
         }
         li {
             padding: 15px;

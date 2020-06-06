@@ -1,5 +1,6 @@
 main{
     font-size: 16px;
+    // 面包屑导航
     .category{
         padding: 20px 0  15px 0;
         a.active {
@@ -7,6 +8,7 @@ main{
             font-size: 16px;
         }
     }
+    // 排序
     .level{
         background: #fff;
         padding: 20px 15px;
@@ -18,6 +20,7 @@ main{
             margin-right: 25px;
         }
     }
+    // 列表
     .list{
         ul{
             display: flex;
@@ -62,6 +65,35 @@ main{
                 font-size: 16px;
                 font-weight: normal;
             }
+        }
+    }
+    // 分页
+    .pagelist{
+        margin: 20px  0;
+        line-height: 40px;
+        text-align: right;
+        a,span{
+            display: inline-block;
+            color: #333;
+            border: 1px solid #ddd;
+            height: 36px;
+            line-height: 36px;
+            padding: 0 14px;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+        .active{
+            border: 0;
+            color: #EC6C00;;
+        }
+        input{
+            display: inline-block;
+            color: #333;
+            width: 35px;
+            line-height: 35px;
+            padding: 0 14px;
+            margin-right: 5px;
+            font-size: 14px;
         }
     }
 }

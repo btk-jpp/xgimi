@@ -24,7 +24,7 @@
                             <img class="lazy" data-original="${value.url}" >
                         </p>
                         <p class="pname"> ${value.title} </p>
-                        <p><b> ${value.sailnumber}<font>元</font></b></p>
+                        <p><b class="price"> ${value.price}</b><font>元</font></p>
                     </a>
                 </li>
             `;
@@ -55,14 +55,14 @@
         pageCount: 3,//总的页数
         jump: true,//是否开启跳转到指定的页数，布尔值。
         coping: true,//是否开启首页和尾页，布尔值。
-        prevContent: '上一页',
-        nextContent: '下一页',
+        prevContent: '<上一页',
+        nextContent: '下一页>',
         homePage: '首页',
         endPage: '尾页',
         callback: function (api) {
             console.log(api.getCurrent());//获取的页码给后端
             $.ajax({
-                url: 'http://localhost/project/php/listdata.php',
+                url: 'http://localhost/xgimi/php/listdata.php',
                 data: {
                     page: api.getCurrent()
                 },
@@ -71,14 +71,15 @@
                 let $strhtml = '<ul>';
                 $.each(data, function (index, value) {
                     $strhtml += `
-                        <li>
-                            <a href="detail.html?sid=${value.sid}" target="_blank">
-                                <img src="${value.url}"/>
-                                <p>${value.sid}${value.title}</p>
-                                <span class="price">￥${value.price}</span>
-                                <span>${value.sailnumber}</span>
-                            </a>
-                        </li>
+                <li>
+                    <a href="detail.html?sid=${value.sid}">
+                        <p>
+                            <img src="${value.url}" >
+                        </p>
+                        <p class="pname"> ${value.title} </p>
+                        <p><b class="price"> ${value.price}</b><font>元</font></p>
+                    </a>
+                </li>
                     `;
                 });
                 $strhtml += '</ul>';
