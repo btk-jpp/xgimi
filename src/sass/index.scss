@@ -110,6 +110,10 @@ main{
             height: 250px;
             overflow: hidden;
             font-size: 0;
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
         .new-products-title{
             color: #333333;

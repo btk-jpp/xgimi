@@ -1,80 +1,76 @@
-!function ($) {
+! function ($) {
     $(document).ready(function () {
         // 引入头部尾部商品文件
-        $("header").load( "header.html");
-        $("footer").load( "footer.html");
-        $(".products").load( "productlist.html");
+        $("header").load("header.html");
+        $("footer").load("footer.html");
+        $(".products").load("productlist.html");
+
         // 轮播
-        class Lunbo {
-            constructor() {
-                this.lunbo = $('.swiper-container');
-                this.picul = $('.swiper-container ul');
-                this.picli = this.picul.children();
-                this.btnli = $('.swiper-pagination span');
-                this.leftarrow = $('.prev');
-                this.rightarrow = $('.next');
-                this.index = 0;
-                this.timer = null;
-            }
-
-            init() {
-                let _this = this;
-                this.btnli.on('click', function() {
-                    _this.index = $(this).index(); //接收当前索引，不支持箭头函数。
-                    _this.tabswitch();
-                });
-
-                //左右箭头事件
-                this.rightarrow.on('click', function() {
-                    _this.rightevent()
-                });
-
-                this.leftarrow.on('click', function() {
-                    _this.leftevent()
-                });
-
-                //自动轮播
-                this.timer = setInterval(function() {
-                    _this.rightarrow.click();
-                }, 5000);
-
-                //鼠标移入移出停止开启对应的自动轮播
-                this.lunbo.hover(function() {
-                    clearInterval(_this.timer);
-                }, function() {
-                    this.timer = setInterval(function() {
-                        _this.rightarrow.click();
-                    }, 5000);
-                });
-
-            }
-
-            tabswitch() {
-                this.btnli.eq(this.index).addClass('active').siblings('span').removeClass('active');
-                //当前的li显示(透明变成1),其他变成0
-                this.picli.eq(this.index).stop().animate({
-                    opacity: 1
-                }).siblings('ul li').stop().animate({
-                    opacity: 0
-                });
-            }
-
-            rightevent() {
-                this.index++;
-                if (this.index > this.btnli.length - 1) {
-                    this.index = 0;
-                }
-                this.tabswitch();
-            }
-            leftevent() {
-                this.index--;
-                if (this.index < 0) {
-                    this.index = this.btnli.length - 1;
-                }
-                this.tabswitch();
+        var length,
+            currentIndex = 0,
+            interval,
+            hasStarted = false,//轮播图是否开始
+            t = 3000;//轮播时间
+        let $wrap = $('.swiper-wrapper li')//图片
+        let $spot = $('.swiper-pagination span')//小点
+        length = $wrap.length;
+        //将除了第一个其他li隐藏
+        $('.swiper-wrapper li:not(:first)').hide();
+        //给第一个圆点赋值激活
+        $('swiper-pagination span:first').addClass('active');
+        // 小圆点hover效果
+        $spot.hover(function (e) {
+            stop();
+            var preIndex = $spot.filter(".active").index(); 
+            currentIndex = $(this).index(); 
+            play(preIndex, currentIndex);
+        }, function () {
+            start();
+        });
+        // 左右箭头
+        $('.prev').click(function(){
+            var preIndex = currentIndex;
+            currentIndex = --currentIndex % length;
+            play(preIndex, currentIndex);
+        })
+        $('.next').click(function(){
+            next();
+        })
+        // 图片hover停止轮播
+        $('.swiper-container').hover(function(){
+            stop()
+        },function(){
+            start()
+        })
+        // /从preIndex页翻到currentIndex页
+        // preIndex翻页的起始页
+        // currentIndex整数，翻到的那页
+        function play(preIndex, currentIndex) {
+            $wrap.eq(preIndex).fadeOut(500).parent().children().eq(currentIndex).fadeIn(500);
+            $spot.removeClass('active');
+            $spot.eq(currentIndex).addClass('active');
+        }
+        // 自动向后翻页
+        function next() {
+            var preIndex = currentIndex;
+            currentIndex = ++currentIndex % length;
+            play(preIndex, currentIndex);
+        }
+        // 开始轮播
+        function start() {
+            if (!hasStarted) {
+                hasStarted = true;
+                interval = setInterval(next, t);
             }
         }
-        new Lunbo().init();
+        //停止轮播
+        function stop() {
+            clearInterval(interval);
+            hasStarted = false;
+        }
+        //开始轮播
+        start();
+
 
     })
 }(jQuery);

@@ -1,20 +1,21 @@
 ! function($) {
     // 引入头部尾部商品文件
-    $(document).ready(function () {
-        $("header").load( "header.html");
-        $("footer").load( "footer.html");
-    })
-    //1.获取cookie渲染对应的商品列表
-    //2.获取所有的接口数据，判断取值。
+    $(document).ready(function() {
+            $("header").load("header.html");
+            $("footer").load("footer.html");
+        })
+        //1.获取cookie渲染对应的商品列表
+        //2.获取所有的接口数据，判断取值。
 
     function showlist(sid, num) { //sid：编号  num：数量
         $.ajax({
-            url: 'http://localhost/project/php/alldata.php',
+            url: 'http://localhost/xgimi/php/alldata.php',
             dataType: 'json'
         }).done(function(data) {
             $.each(data, function(index, value) {
                 if (sid == value.sid) {
                     let $clonebox = $('.goods-item:hidden').clone(true, true); //克隆隐藏元素
+                    console.log($clonebox)
                     $clonebox.find('.goods-pic').find('img').attr('src', value.url);
                     $clonebox.find('.goods-pic').find('img').attr('sid', value.sid);
                     $clonebox.find('.goods-d-info').find('a').html(value.title);
@@ -113,8 +114,6 @@
         let $num = parseInt(obj.parents('.goods-item').find('.quantity-form input').val());
         return ($dj * $num).toFixed(2)
     }
-
-
     //将改变后的数量存放到cookie中
     let arrsid = []; //存储商品的编号。
     let arrnum = []; //存储商品的数量。
@@ -132,7 +131,6 @@
         cookietoarray();
         let $sid = obj.parents('.goods-item').find('img').attr('sid');
         arrnum[$.inArray($sid, arrsid)] = obj.parents('.goods-item').find('.quantity-form input').val();
-        jscookie.add('cookienum', arrnum, 10);
     }
 
 

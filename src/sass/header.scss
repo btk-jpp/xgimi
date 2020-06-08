@@ -3,16 +3,16 @@
     min-width: 1140px;
     margin: 0 auto;
 }
+
 //顶部
-nav{
+nav {
     background: #f7f9fa;
     height: 40px;
     line-height: 40px;
     border-bottom: solid 1px #eeeeee;
-    
-    .nav-left{
-        li{
-            &:nth-of-type(1){
+    .nav-left {
+        li {
+            &:nth-of-type(1) {
                 padding: 0;
             }
             float: left;
@@ -21,17 +21,17 @@ nav{
                 color: #1d1d1d;
                 font-size: 12px;
                 display: block;
-                &:hover{
+                &:hover {
                     color: #428bca;
                 }
             }
         }
     }
-    .nav-right{
+    .nav-right {
         width: 370px;
         float: right;
         height: 40px;
-        li{
+        li {
             float: left;
             overflow: hidden;
             margin-left: 15px;
@@ -40,27 +40,28 @@ nav{
                 color: #1d1d1d;
                 font-size: 12px;
                 display: block;
-                &:hover{
+                &:hover {
                     color: #428bca;
                 }
             }
         }
-        .user-hide{
+        .user-hide {
             float: left;
             display: none;
-            a{
-                &:hover{
+            a {
+                &:hover {
                     color: #428bca;
                 }
             }
         }
-        ul{
+        ul {
             float: left;
         }
     }
 }
+
 // 头部导航
-.nav-menu{
+.nav-menu {
     width: 100%;
     background: #fff;
     clear: both;
@@ -90,8 +91,16 @@ nav{
                 }
             }
         }
+        a:hover{
+            img:nth-of-type(1){
+                left: 120px;
+            }
+            img:nth-of-type(2){
+                left: 0px;
+            }
+        }
     }
-    ul{
+    ul {
         display: inline-block;
         margin-left: 30px;
         height: 80px;
@@ -99,8 +108,8 @@ nav{
             line-height: 80px;
             height: 80px;
             float: left;
-            &:hover{
-                a{
+            &:hover {
+                a {
                     color: #428bca;
                 }
             }
@@ -122,8 +131,9 @@ nav{
         }
     }
 }
+
 // 导航内容
-.nav-menu-main{
+.nav-menu-main {
     position: absolute;
     top: 120px;
     width: 100%;
@@ -139,18 +149,18 @@ nav{
             float: left;
             position: relative;
             padding-left: 155px;
-            li{
+            li {
                 float: left;
-                img{
+                img {
                     width: 110px;
                     margin-top: 5px;
                     margin-bottom: 5px;
                 }
-                p{
+                p {
                     text-align: center;
                 }
             }
-            .list-title{
+            .list-title {
                 text-align: center;
                 line-height: 140px;
                 font-size: 16px;
@@ -158,7 +168,8 @@ nav{
         }
     }
 }
-.nav-main{
+
+.nav-main {
     display: none;
     position: absolute;
     top: 120px;
@@ -167,9 +178,9 @@ nav{
     z-index: 99999;
     box-shadow: 0 0 3px #BBB;
     // 左边
-    .nav-left{
+    .nav-left {
         float: left;
-        i{
+        i {
             width: 6px;
             height: 8px;
             display: inline-block;
@@ -178,20 +189,20 @@ nav{
             position: relative;
             top: -1px;
         }
-        li{
+        li {
             font-size: 16px;
             margin: 30px 0;
             cursor: pointer;
         }
     }
     // 右边
-    .nav-right{
+    .nav-right {
         float: left;
         width: 868px;
         padding-left: 60px;
-        .nav-box{
+        .nav-box {
             display: none;
-            &:nth-of-type(1){
+            &:nth-of-type(1) {
                 display: block;
             }
         }
@@ -199,21 +210,20 @@ nav{
             padding: 15px;
             text-align: center;
             float: left;
-           &:hover p{
+            &:hover p {
                 color: #428bca;
-            } 
+            }
         }
-        .nav-img{
+        .nav-img {
             width: 120px;
             height: 120px;
             line-height: 120px;
             overflow: hidden;
-            img{
+            img {
                 width: 100%;
             }
         }
-
-        p{
+        p {
             width: 120px;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -221,20 +231,21 @@ nav{
             color: #333333;
             font-size: 12px;
         }
-        i{
+        i {
             display: inline-block;
             width: 40px;
             height: 40px;
             background: url(../img/view_more.png);
             vertical-align: middle;
         }
-        .view_more:hover{
-            & i{
+        .view_more:hover {
+            & i {
                 background: url(../img/view_more_active.png);
             }
         }
     }
 }
+
 // 侧边栏
 .sidebarBtn {
     width: 60px;
@@ -252,20 +263,20 @@ nav{
         background-position: -1px 133px;
         cursor: pointer;
         margin-bottom: 15px;
-        &:hover{
+        &:hover {
             overflow: visible;
             background-image: url(../img/sildebarBtn-active.png);
         }
-        &:hover>.sideTip{
+        &:hover>.sideTip {
             left: -100px;
             opacity: 1;
         }
     }
-    .sidebar-cart{
+    .sidebar-cart {
         background-position: -1px 59px;
     }
-    .sidebar-top{
-        background-position:0px 0px;
+    .sidebar-top {
+        background-position: 0px 0px;
         display: none;
     }
     .sideTip {
@@ -281,5 +292,19 @@ nav{
         text-indent: -6px;
         transition: all 0.2s linear;
         opacity: 0;
+    }
+    #msg {
+        position: absolute;
+        top: 75px;
+        z-index: 10000;
+        width: 0px;
+        height: 52px;
+        line-height: 52px;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        background: #360;
+        right: 63px;
+        display: none;
     }
 }
