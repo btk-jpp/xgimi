@@ -1,6 +1,6 @@
 # xgimi
 
-基于jquery+gulp包管理工具开发
+基于jquery+gulp
 
 ## 仿极米官网开发
 ### 1.项目流程
