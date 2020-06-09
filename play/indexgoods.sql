@@ -10,10 +10,65 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2020-06-09 10:20:33
+Date: 2020-06-09 10:19:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `indexgoods`
+-- ----------------------------
+DROP TABLE IF EXISTS `indexgoods`;
+CREATE TABLE `indexgoods` (
+  `sid` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `mtitle` varchar(999) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `url` varchar(999) NOT NULL,
+  `urllist` varchar(999) NOT NULL,
+  `description` varchar(999) NOT NULL,
+  `price` float(7,2) unsigned NOT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of indexgoods
+-- ----------------------------
+INSERT INTO `indexgoods` VALUES ('1', '激光电视', '极米激光电视 矅·LUNE Pro', 'https://file02.xgimi.com/official/admin/20190409/2019040916295642900.jpg', 'https://file02.xgimi.com/official/admin/20190926/2019092609211280466.jpg', '重新定义万元级激光电视', '23999.00');
+INSERT INTO `indexgoods` VALUES ('2', '激光电视', '极米 A2', 'https://file02.xgimi.com/official/admin/20191008/2019100815441815417.jpg', 'https://file02.xgimi.com/official/admin/20190926/2019092609211280466.jpg', '找回打开电视的热情', '20999.00');
+INSERT INTO `indexgoods` VALUES ('3', '激光电视', '极米 A2 Pro', 'https://file02.xgimi.com/official/admin/20191018/2019101810394654526.jpg', 'https://file02.xgimi.com/official/admin/20190930/2019093015523171086.jpg', '突破眼界 大有格局', '34999.00');
+INSERT INTO `indexgoods` VALUES ('4', '激光电视', '极米 T1', 'https://file02.xgimi.com/official/admin/20190514/2019051418024538300.jpg', 'https://file02.xgimi.com/official/admin/20190122/2019012219074031949.jpg', '重新定义人生赢家', '79999.00');
+INSERT INTO `indexgoods` VALUES ('5', '激光电视', '极米 矅·LUNE 4K Pro', 'https://file02.xgimi.com/official/admin/20190514/2019051418022488003.jpg', 'https://file02.xgimi.com/official/admin/20190820/2019082016455671957.jpg', '百吋4K 专业画质', '21999.00');
+INSERT INTO `indexgoods` VALUES ('6', '激光电视', '极米100英寸超短焦菲涅尔抗光硬幕', 'https://file02.xgimi.com/official/admin/20190124/2019012414555669404.jpg', 'https://file02.xgimi.com/official/admin/20190124/2019012414555669404.jpg', '纤薄面板设计/聚光结构更高增益', '6999.00');
+INSERT INTO `indexgoods` VALUES ('7', '激光电视', '极米 皓·LUNE 4K', 'https://file02.xgimi.com/official/admin/20190123/2019012315500740150.jpg', 'https://file02.xgimi.com/official/admin/20190123/2019012315500740150.jpg', '万元级超百吋4K激光电视', '10999.00');
+INSERT INTO `indexgoods` VALUES ('8', '家用娱乐', '极米 RS Pro', 'https://file02.xgimi.com/official/admin/20190822/2019082216300622585.jpg', 'https://file02.xgimi.com/official/admin/20190822/2019082216300622585.jpg', '极米 RS Pro', '8999.00');
+INSERT INTO `indexgoods` VALUES ('9', '家用电视', '极米 H3', 'https://file02.xgimi.com/official/admin/20200221/2020022115473113160.jpg', 'https://file02.xgimi.com/official/admin/20190813/2019081315272675047.jpg', '极米H3，名不虚传', '4799.00');
+INSERT INTO `indexgoods` VALUES ('10', '家用电视', '极米 Z8X', 'https://file02.xgimi.com/official/admin/20200221/2020022115531734372.jpg', 'https://file02.xgimi.com/official/admin/20190813/2019081315383374442.jpg', '1080P重磅新品', '3299.00');
+INSERT INTO `indexgoods` VALUES ('11', '家用电视', '新一代 Z6X', 'https://file02.xgimi.com/official/admin/20191021/2019102109275037502.jpg', 'https://file02.xgimi.com/official/admin/20191021/2019102109275658981.jpg', '曜黑之作 亮出不凡', '2898.00');
+INSERT INTO `indexgoods` VALUES ('12', '家用电视', '极米120英寸16：10遥控幕布', 'https://file02.xgimi.com/official/admin/20200106/2020010617590751323.jpg', 'https://file02.xgimi.com/official/admin/20200106/2020010617590751323.jpg', '电动静音调控，收放自如', '899.00');
+INSERT INTO `indexgoods` VALUES ('13', '家用电视', '极米K歌无线麦克风C2', 'https://file02.xgimi.com/official/admin/20190124/2019012414571715412.jpg', 'https://file02.xgimi.com/official/admin/20190124/2019012414571715412.jpg', '高灵敏麦头 收音防干扰', '599.00');
+INSERT INTO `indexgoods` VALUES ('14', '家用电视', '极米吊顶支架（C225B）', 'https://file02.xgimi.com/official/admin/20190124/2019012415290135741.jpg', 'https://file02.xgimi.com/official/admin/20190124/2019012415290135741.jpg', '独立云台/模块化结构', '199.00');
+
+-- ----------------------------
+-- Table structure for `registry`
+-- ----------------------------
+DROP TABLE IF EXISTS `registry`;
+CREATE TABLE `registry` (
+  `sid` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(40) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of registry
+-- ----------------------------
+INSERT INTO `registry` VALUES ('1', 'asd1', 'cba3802d0d10dd128a8e065c2a48a78d94ed40ab', '2020-05-30 11:43:56');
+INSERT INTO `registry` VALUES ('2', 'a112', '601f1889667efaebb33b8c12572835da3f027f78', '2020-05-30 15:41:57');
+INSERT INTO `registry` VALUES ('3', 'aq12', '601f1889667efaebb33b8c12572835da3f027f78', '2020-06-04 16:13:43');
+INSERT INTO `registry` VALUES ('4', 'acv1', '601f1889667efaebb33b8c12572835da3f027f78', '2020-06-04 16:16:11');
+INSERT INTO `registry` VALUES ('5', 'acv2', '601f1889667efaebb33b8c12572835da3f027f78', '2020-06-05 14:07:34');
+INSERT INTO `registry` VALUES ('6', 'acv3', '601f1889667efaebb33b8c12572835da3f027f78', '2020-06-06 16:21:14');
 
 -- ----------------------------
 -- Table structure for `xgimigoods`
