@@ -52,7 +52,65 @@
             $(this).parent().siblings('span').text("");
             $flag2 = true
 		}
-	})
+    })
+    // 判断密码强弱
+    $('input').eq(1).on('input', function() {
+        let $pass = $(this).val();
+        if ($pass.length >= 6 && $pass.length <= 20) {
+            let regnum = /\d+/;
+            let regupper = /[A-Z]+/;
+            let reglower = /[a-z]+/;
+            let regother = /[\W\_]+/; //其他字符
+
+            //test():匹配存在感
+            let $count = 0; //计数
+
+            if (regnum.test($pass)) {
+                $count++;
+            }
+
+            if (regupper.test($pass)) {
+                $count++;
+            }
+
+            if (reglower.test($pass)) {
+                $count++;
+            }
+
+            if (regother.test($pass)) {
+                $count++;
+            }
+
+            switch ($count) {
+                case 1:
+                    $(this).parent().siblings('span').html('弱').css({
+                        color: 'red'
+                    });
+                    $flag2 = false;
+                    break;
+
+                case 2:
+                case 3:
+                    $(this).parent().siblings('span').html('中').css({
+                        color: '#70bdff'
+                    });
+                    $flag2 = true;
+                    break;
+                case 4:
+                    $(this).parent().siblings('span').html('强').css({
+                        color: 'green'
+                    });
+                    $flag2 = true;
+                    break;
+            }
+
+        } else {
+            $(this).parent().siblings('span').html('长度只能在6-20个字符之间').css({
+                color: 'red'
+            });
+            $flag2 = false;
+        }
+    });
 	//	确认密码
 	$('input').eq(2).focus(function () {
 		if ($(this).val().length == 0) {
@@ -70,38 +128,37 @@
 		}
     })
     //验证码
-    $('input').eq(4).focus(function () {
-		if ($(this).val().length == 0) {
-			$(this).parent().siblings("span").text("看不清？点击图片更换验证码");
-		}
-    })
-    // 	验证码
-	function code() {
-		var str = "qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPLKJHGFDSAZXCVBNM";
-		var str1 = 0;
-		for (var i = 0; i < 4; i++) {
-			str1 += str.charAt(Math.floor(Math.random() * 62))
-		}
-		str1 = str1.substring(1)
-		$("#code em").text(str1);
-	}
-	code();
-	$("#code em").click(code);
-	//	验证码验证
-	$('#code input').blur(function () {
-		if ($(this).val().length == 0) {
-            $(this).parent().siblings('span').text("");
-			$(this).parent().siblings('span').css("color", '#ccc');
-		} else if ($(this).val().toUpperCase() != $("#code em").text().toUpperCase()) {
-			$(this).parent().siblings('span').text("验证码不正确");
-			$(this).parent().siblings('span').css("color", 'red');
-		} else {
-            $(this).parent().siblings('span').text("");
-            $flag4 = true;
-		}
-	})
+    // $('input').eq(4).focus(function () {
+	// 	if ($(this).val().length == 0) {
+	// 		$(this).parent().siblings("span").text("看不清？点击图片更换验证码");
+	// 	}
+    // })
+    // // 	验证码
+	// function code() {
+	// 	var str = "qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPLKJHGFDSAZXCVBNM";
+	// 	var str1 = 0;
+	// 	for (var i = 0; i < 4; i++) {
+	// 		str1 += str.charAt(Math.floor(Math.random() * 62))
+	// 	}
+	// 	str1 = str1.substring(1)
+	// 	$("#code em").text(str1);
+	// }
+    // code();
+	// $("#code em").click(code);
+	// //	验证码验证
+	// $('#code input').blur(function () {
+	// 	if ($(this).val().length == 0) {
+    //         $(this).parent().siblings('span').text("").css("color", '#ccc');
+	// 	} else if ($(this).val().toUpperCase() != $("#code em").text().toUpperCase()) {
+	// 		$(this).parent().siblings('span').text("验证码不正确");
+	// 		$(this).parent().siblings('span').css("color", 'red');
+	// 	} else {
+    //         $(this).parent().siblings('span').text("");
+    //         $flag4 = true;
+	// 	}
+	// })
     $('form').on('submit', function () {
-        if ($flag1 & $flag2 & $flag3 & $flag4){
+        if ($flag1 & $flag2 & $flag3){
             $('form').submit();
         }else{
             return false;//阻止提交

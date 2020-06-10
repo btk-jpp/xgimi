@@ -157,12 +157,9 @@ main{
                 span{
                     right: -90px;
                 }
-                em{
-                    width: 135px;
-                    height: 44px;
+                img{
                     display: inline-block;
                     top: 10px;
-                    background: #70bdff;
                     color: white;
                     line-height: 44px;
                     font-size: 20px;
@@ -171,7 +168,6 @@ main{
                     cursor: pointer;
                     user-select:none;
                 }
-
             }
         }
     }
