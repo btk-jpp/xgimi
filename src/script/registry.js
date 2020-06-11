@@ -125,11 +125,6 @@
             $flag3 = true
 		}
     })
-    $.get({
-        url:'http://localhost/xgimi/php/code.php'
-    }).then(data=>{
-        console.log(data)
-    })
     //验证码
     // $('input').eq(4).focus(function () {
 	// 	if ($(this).val().length == 0) {
