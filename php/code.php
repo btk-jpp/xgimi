@@ -35,4 +35,4 @@ imagerectangle($im,0,0,$code["width"]-1,$code["height"]-1,$font);
 imagepng($im);
 imagedestroy($im);
 
-echo $code["value"];
+echo $im;

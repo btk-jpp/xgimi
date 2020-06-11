@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="https://www.xgimi.com/favicon.ico?">
     <link rel="icon" href="https://www.xgimi.com/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1879168_b6vmxlm0qxf.css">
 </head>
 
 <body>
@@ -35,9 +36,10 @@
             </div>
             <form action="http://localhost/xgimi/php/login.php" method="post">
                 <div>
-                    <p><label for="">用户姓名：</label><input type="text" name="username" class="username" placeholder="用户名" class="username"></p><span></span></div>
+                    <p><label for="">用户姓名：</label><input type="text" name="username" class="username" placeholder="用户名" class="username" autocomplete="off"></p><span></span></div>
                 <div>
-                    <p><label for="">用户密码：</label><input type="password" name="password" placeholder="密码" class="password"></p><span></span></div>
+                    <p><label for="">用户密码：</label><input type="password" name="password" placeholder="密码" class="password"><i class="iconfont icon-eye-slash"></i></use>
+                    </svg></p><span></span></div>
                 <button>立即登录</button>
                 <div>
                     <a href="javascript:;">手机短信登录/注册</a>
