@@ -8,13 +8,12 @@
                 password: hex_sha1($('.password').val())
             }
         }).done(function(result) {
-            if (!result) {
-                $('.password').val('');
-                alert('用户名或者密码错误');
-                return
-            } else {
+            if (result) {
                 location.href = "index.html";
                 localStorage.setItem('username', $('.username').val());
+            } else {
+                $('.password').val('');
+                alert('用户名或者密码错误');
             }
         });
     });
