@@ -1,6 +1,6 @@
 <?php
 session_start();
-$code=array("width"=>135,"height"=>44,	"len"=>4,			 
+$code=array("width"=>135,"height"=>44,	"len"=>4,		
 	"char"=>3,"imx"=>8,"imy"=>6,"cookie"=>"regsession_code",
 	"value"=>""
 );
@@ -34,3 +34,5 @@ imagestring($im,5,$code["imx"],$code["imy"],$code["value"],$font);
 imagerectangle($im,0,0,$code["width"]-1,$code["height"]-1,$font);
 imagepng($im);
 imagedestroy($im);
+
+echo $code["value"];

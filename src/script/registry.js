@@ -1,10 +1,10 @@
 !function ($) {
     let $user = $('.username');
     let $input = $('form input');
-    let $flag1 = false; 
-    let $flag2 = false; 
-    let $flag3 = false; 
-    let $flag4 = false; 
+    let $flag1 = false; //用户名
+    let $flag2 = false; //密码
+    let $flag3 = false; //缺认密码
+    // let $flag4 = false; 验证码
     //用户名
     $input.eq(0).focus(function(){
         if ($(this).val().length == 0) {
@@ -57,12 +57,10 @@
     $('input').eq(1).on('input', function() {
         let $pass = $(this).val();
         if ($pass.length >= 6 && $pass.length <= 20) {
-            let regnum = /\d+/;
-            let regupper = /[A-Z]+/;
-            let reglower = /[a-z]+/;
+            let regnum = /\d+/;//判断数字
+            let regupper = /[A-Z]+/;//判断大写字母
+            let reglower = /[a-z]+/;//判断小写字母
             let regother = /[\W\_]+/; //其他字符
-
-            //test():匹配存在感
             let $count = 0; //计数
 
             if (regnum.test($pass)) {
@@ -80,7 +78,7 @@
             if (regother.test($pass)) {
                 $count++;
             }
-
+            //判断密码强中弱
             switch ($count) {
                 case 1:
                     $(this).parent().siblings('span').html('弱').css({
@@ -127,6 +125,11 @@
             $flag3 = true
 		}
     })
+    $.get({
+        url:'http://localhost/xgimi/php/code.php'
+    }).then(data=>{
+        console.log(data)
+    })
     //验证码
     // $('input').eq(4).focus(function () {
 	// 	if ($(this).val().length == 0) {
@@ -158,7 +161,7 @@
 	// 	}
 	// })
     $('form').on('submit', function () {
-        if ($flag1 & $flag2 & $flag3){
+        if ($flag1 && $flag2 && $flag3){
             $('form').submit();
         }else{
             return false;//阻止提交

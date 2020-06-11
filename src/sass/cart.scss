@@ -32,7 +32,9 @@
         }
     }
 }
-
+.cart{
+    position: relative;
+}
 .cart-search {
     float: right;
     border: 2px solid #c91623;
@@ -152,33 +154,33 @@
 }
 
 .cart-thead {
-    height: 32px;
-    line-height: 32px;
-    margin: 0 0 10px;
-    padding: 5px 0;
-    background: #f3f3f3;
-    border: 1px solid #e9e9e9;
-    border-top: 0
+    height: 70px;
+    line-height: 70px;
+    color: #424242;
+    border: 1px solid #D7D7D7;
 }
 
 .cart-col {
-    float: left
+    float: left;
+    width: 100px;
+    text-align: center;
 }
 
 .t-checkbox {
     height: 18px;
-    line-height: 18px;
-    padding-top: 7px;
+    line-height: 70px;
     width: 122px;
     padding-left: 11px
 }
 
 .cart-checkbox input {
+    line-height: 65px;
     margin-right: 5px
 }
 
 .t-goods {
-    width: 208px
+    width: 208px;
+    text-align: center;
 }
 
 .t-props {
@@ -201,7 +203,7 @@
 }
 
 .t-sum {
-    width: 100px;
+    width: 90px;
     padding-right: 40px;
     text-align: right
 }
@@ -246,12 +248,7 @@
     vertical-align: middle
 }
 
-.item-list {
-    border-style: solid;
-    border-width: 2px 1px 1px;
-    border-color: #aaa #f1f1f1 #f1f1f1;
-    background: #fff
-}
+
 
 .item-head {
     height: 26px;
@@ -310,7 +307,7 @@
 }
 
 .goods-item-sele {
-    background: #fff4e8
+    background: #f2f2f2
 }
 
 .goods-info {
@@ -365,7 +362,14 @@
 .goods-d-info {
     height: 40px;
     line-height: 20px;
-    overflow: hidden
+    overflow: hidden;
+    a{
+        text-align: center;
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+    }
 }
 
 .goods-ex {
@@ -499,17 +503,18 @@
 }
 
 .b-action {
-    padding: 15px 0 10px 0
+    padding: 15px 0 10px 4px
 }
 
 .b-action a {
     display: block;
+    text-align: center;
     width: 75px;
     height: 20px
 }
 
 #cart-floatbar {
-    width: 988px;
+    // width: 988px;
     height: 50px;
     border: 1px solid #f0f0f0;
     background: #fff;
@@ -520,13 +525,13 @@
     float: left;
     height: 18px;
     line-height: 18px;
-    padding: 16px 0 16px 9px
+    padding: 14px 0 16px 9px
 }
 
 .operation {
     float: left;
     height: 50px;
-    width: 310px;
+    width: 465px;
     line-height: 50px
 }
 
@@ -537,6 +542,7 @@
 }
 
 .toolbar-right {
+    float: left;
     overflow: hidden
 }
 
@@ -803,4 +809,17 @@
 
 .right-btn {
     right: 0
+}
+
+.back{
+    display: block;
+    width: 160px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    background: #EC6C00;
+    border: 1px solid #EC6C00;
+    font-size: 16px;
+    float: left;
 }

@@ -42,7 +42,7 @@
         },function(){
             start()
         })
-        // /从preIndex页翻到currentIndex页
+        // 从preIndex页翻到currentIndex页
         // preIndex翻页的起始页
         // currentIndex整数，翻到的那页
         function play(preIndex, currentIndex) {
